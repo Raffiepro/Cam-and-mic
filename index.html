@@ -1,0 +1,13 @@
+<video autoplay="true" id="theStream">
+
+<script>
+    let video = document.getElementById("theStream");
+    
+    navigator.mediaDevices.getUserMedia( {video: true, audio: true} )
+        .then(function (stream) {
+            video.srcObject = stream;
+        })
+        .catch(function (error) {
+            alert("Error with getting stream: " + error);
+        });
+</script>
